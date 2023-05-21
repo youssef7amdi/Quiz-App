@@ -1,0 +1,65 @@
+[
+  {
+    "title": "Which of the following is the most common type of dementia?",
+    "answer_1": "Alzheimer’s",
+    "answer_2": "Lewy Body Dementia",
+    "answer_3": "Pick’s Disease (Frontotemperal Dementia)",
+    "answer_4": "Parkinson’s",
+    "answer_5": "Vascular",
+    "right_answer": "Alzheimer’s"
+  },
+  {
+    "title": "Which of the following is an reversable dementia?",
+    "answer_1": "Huntington’s Disease",
+    "answer_2": "Lewy Body Dementia",
+    "answer_3": "Infectious Disorders",
+    "answer_4": "Parkinson’s",
+    "answer_5": "Vascular",
+    "right_answer": "Infectious Disorders"
+  },
+  {
+    "title": "Which of the following score is normal in Folstein Mini-Mental Status Examination?",
+    "answer_1": "32",
+    "answer_2": "40",
+    "answer_3": "16",
+    "answer_4": "27",
+    "answer_5": "9",
+    "right_answer": "27"
+  },
+  {
+    "title": "Which of the following type of dementia is characterized by Akinetic rigidity?",
+    "answer_1": "Alzheimer’s",
+    "answer_2": "Jacob-Creutzfeldt Disease",
+    "answer_3": "Pick’s Disease (Frontotemperal Dementia)",
+    "answer_4": "Vascular",
+    "answer_5": "Parkinson’s",
+    "right_answer": "Parkinson’s"
+  },
+  {
+    "title": "WHICH OF THE FOLLOWING DRUGS IS 1ST GENERATION ANTIPSYCHOTIC?",
+    "answer_1": "RISPERIDON",
+    "answer_2": "HALLOPERIDOL",
+    "answer_3": "ESITALOPRAM",
+    "answer_4": "LITHIUM",
+    "answer_5": "OLANZAPIN",
+    "right_answer": "HALLOPERIDOL"
+  },
+  {
+    "title": "Schizophrenia is well established as a brain disorder, with abnormalities in:",
+    "answer_1": "Frontal lobe",
+    "answer_2": "Occipital lobe",
+    "answer_3": "Mesocortical area",
+    "answer_4": "Mesolimbic area and Mesocortical area",
+    "answer_5": "Mesolimbic area",
+    "right_answer": "Mesolimbic area and Mesocortical area"
+  },
+  {
+    "title": "Which among the following drug is used as anti-depressant mood stabilizer?",
+    "answer_1": "Carbamazepine",
+    "answer_2": "Sodium valproate",
+    "answer_3": "Venlafaxine",
+    "answer_4": "Lamotrigine",
+    "answer_5": "stillacil",
+    "right_answer": "Lamotrigine"
+  }
+]
