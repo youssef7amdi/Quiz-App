@@ -39,15 +39,15 @@ body {
   font-size: 50px;
   font-weight: bold;
 }
-.container.failed .result ,
+.container.failed .result,
 .finishing-page .container.failed .text span {
-  color: #D32F2F !important;
+  color: #d32f2f !important;
 }
-.container.good .result ,
+.container.good .result,
 .finishing-page .container.good .text span {
   color: #00aa06 !important;
 }
-.container.very-good .result ,
+.container.very-good .result,
 .finishing-page .container.very-good .text span {
   color: #0396df !important;
 }
@@ -61,7 +61,7 @@ body {
   color: #4034ac;
   caret-color: #4034ac;
 }
-.start-container .choose-test, 
+.start-container .choose-test,
 .finishing-page .container .text {
   display: flex;
   gap: 10px;
@@ -75,7 +75,7 @@ body {
   font-size: 25px;
   color: #4034ac;
 }
-.start-container .start-btn, 
+.start-container .start-btn,
 .finishing-page .container .retest-btn {
   border: none;
   outline: none;
@@ -130,10 +130,8 @@ body {
   font-weight: 600;
   line-height: 30px;
   background-color: #bfdfff80;
-  cursor: pointer;
   transition: 0.3s;
 }
-.quiz-info .quiz-bullets .bullet:hover,
 .quiz-info .quiz-bullets .bullet.active {
   background-color: #5547d5;
   color: white;
