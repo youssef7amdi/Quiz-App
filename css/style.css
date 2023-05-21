@@ -131,6 +131,7 @@ body {
   line-height: 30px;
   background-color: #bfdfff80;
   transition: 0.3s;
+  cursor: default;
 }
 .quiz-info .quiz-bullets .bullet.active {
   background-color: #5547d5;
