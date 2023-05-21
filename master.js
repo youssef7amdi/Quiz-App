@@ -37,7 +37,7 @@ startTest.addEventListener("click", function () {
 
 // function fetch
 function fetchQuestionsCount(category) {
-  fetch(`/${category.toLowerCase()}.json`)
+  fetch(`programming.json`)
     .then((result) => {
       let myData = result.json();
       return myData;
@@ -88,7 +88,7 @@ const questionTitle = document.getElementById("quiz-area"),
 // fetch Questions function;
 let currentQuestionIndex = 0;
 function fetchQuestions(category) {
-  fetch(`/${category.toLowerCase()}.json`)
+  fetch(`programming.json`)
     .then((result) => {
       let myData = result.json();
       return myData;
