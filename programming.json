@@ -44,8 +44,8 @@
     "answer_1": "<object>",
     "answer_2": "<basefont>",
     "answer_3": "<abbr>",
-    "answer_4": "All Tags Are Not Exists in HTML",
-    "right_answer": "All Tags Is Exists in HTML"
+    "answer_4": "All Tags Are Exist in HTML",
+    "right_answer": "All Tags Are Exist in HTML"
   },
   {
     "title": "How We Specify Document Type Of HTML5 Page",

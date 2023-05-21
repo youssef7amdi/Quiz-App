@@ -5,7 +5,10 @@ const startPage = document.getElementById("start-test"),
   startTest = document.getElementById("start-btn"),
   numSpan = document.getElementById("num-span"),
   countdownSpan = document.getElementById("count-span"),
-  quizBullets = document.getElementById("quiz-bullets");
+  quizBullets = document.getElementById("quiz-bullets"),
+  questionTitle = document.getElementById("quiz-area"),
+  questionAnswersArea = document.getElementById("answers-area"),
+  submit = document.getElementById("submit-button");
 
 let theName,
   theCategory,
@@ -29,13 +32,13 @@ startTest.addEventListener("click", function () {
       document.getElementById("minutes"),
       document.getElementById("seconds")
     );
-    fetchQuestions(theCategory);
 
     startPage.style.display = "none";
   }
 });
 
 // function fetch
+let currentQuestionIndex = 0;
 function fetchQuestionsCount(category) {
   fetch(`${category.toLowerCase()}.json`)
     .then((result) => {
@@ -44,16 +47,25 @@ function fetchQuestionsCount(category) {
     })
     .then((fullData) => {
       numSpan.textContent = fullData.length;
-      return fullData.length;
-    })
-    .then((count) => {
       quizBullets.innerHTML = "";
-      for (let i = 0; i < count; i++) {
+      for (let i = 0; i < fullData.length; i++) {
         const bullet = document.createElement("span");
         bullet.className = "bullet";
         bullet.textContent = i + 1;
         quizBullets.appendChild(bullet);
       }
+      return fullData;
+    })
+    .then((myQuestions) => {
+      shuffle(myQuestions);
+      addQuestionTitle(myQuestions, currentQuestionIndex);
+      addQuestionAnswer(myQuestions, currentQuestionIndex);
+      addActiveToBullets([...quizBullets.children], currentQuestionIndex);
+
+      return myQuestions;
+    })
+    .then((myQuestions) => {
+      submitFunction(myQuestions, currentQuestionIndex);
     });
 }
 
@@ -82,29 +94,6 @@ function countDown(minutes, seconds) {
 }
 
 // select quiz area and answers
-const questionTitle = document.getElementById("quiz-area"),
-  questionAnswersArea = document.getElementById("answers-area");
-
-// fetch Questions function;
-let currentQuestionIndex = 0;
-function fetchQuestions(category) {
-  fetch(`${category.toLowerCase()}.json`)
-    .then((result) => {
-      let myData = result.json();
-      return myData;
-    })
-    .then((myQuestions) => {
-      shuffle(myQuestions);
-      addQuestionTitle(myQuestions, currentQuestionIndex);
-      addQuestionAnswer(myQuestions, currentQuestionIndex);
-      addActiveToBullets([...quizBullets.children], currentQuestionIndex);
-
-      return myQuestions;
-    })
-    .then((myQuestions) => {
-      submitFunction(myQuestions, currentQuestionIndex);
-    });
-}
 
 // function add question title
 function addQuestionTitle(arr, index) {
@@ -151,12 +140,10 @@ function removeClassActive(arr) {
 }
 
 // function check answer
-// let questionstatus = false;
 function checkAnswer(answersParent, arr, index) {
   let activeElement = [...answersParent.children].filter((el) =>
     el.classList.contains("active")
   )[0];
-  console.log(activeElement);
   if (activeElement === undefined) {
     wrongAnswers++;
   } else {
@@ -166,11 +153,8 @@ function checkAnswer(answersParent, arr, index) {
       wrongAnswers++;
     }
   }
-  console.log(wrongAnswers);
-  console.log(rightAnswers);
 }
 
-let submit = document.getElementById("submit-button");
 function submitFunction(arr, index) {
   submit.addEventListener("click", function () {
     if (!submit.classList.contains("finish-test")) {
@@ -263,18 +247,3 @@ function shuffle(array) {
     array[random] = temp;
   }
 }
-
-// may be needed
-// let answersArr = [];
-// for (key in myQuestions[currentQuestionIndex]) {
-//   if (myQuestions[currentQuestionIndex].hasOwnProperty(key)) {
-//     let value = myQuestions[currentQuestionIndex][key];
-
-//     let answer = {
-//       [key]: value,
-//     };
-//     answersArr.push(answer);
-//   }
-// }
-// shuffle(answersArr)
-// console.log(answersArr);
